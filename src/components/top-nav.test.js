@@ -15,5 +15,13 @@ describe('<TopNav />', () => {
     const link = wrapper.find('.new');
     link.simulate('click');
     expect(dispatch).toHaveBeenCalled();
-  })
+  });
+
+  it('dispatches generateAuralUpdate on click to \'new game\'', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(<TopNav dispatch={dispatch} />);
+    const link = wrapper.find('.status-link');
+    link.simulate('click');
+    expect(dispatch).toHaveBeenCalled();
+  });
 });
